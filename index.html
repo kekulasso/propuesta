@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para ti 💖</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(180deg, #fff1f5, #fde2e4);
+  color: #4a2c2a;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 420px;
+  margin: auto;
+  padding: 25px;
+  position: relative;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+hr {
+  width: 60px;
+  border: 2px solid #e5989b;
+  margin: 15px auto;
+}
+
+p {
+  font-size: 1.05em;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+img {
+  width: 100%;
+  border-radius: 20px;
+  margin: 20px 0;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+iframe {
+  border-radius: 15px;
+  margin: 20px 0;
+}
+
+/* 🌸 Aparición suave */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: aparecer 2.5s ease forwards;
+  animation-delay: 1.2s;
+}
+
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 💕 Corazones flotando */
+.heart {
+  position: fixed;
+  bottom: -20px;
+  font-size: 18px;
+  color: rgba(230,57,70,0.35);
+  animation: flotar 8s linear infinite;
+}
+
+@keyframes flotar {
+  from {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  20% { opacity: 0.6; }
+  to {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
+
+/* 🎵 Audio oculto */
+audio {
+  display: none;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1em;
+  border-radius: 30px;
+  border: none;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.03);
+}
+
+.si {
+  background-color: #e63946;
+  color: white;
+}
+
+.no {
+  background-color: #f1c0c0;
+  color: #4a2c2a;
+}
+
+.signature {
+  margin-top: 40px;
+  font-style: italic;
+  font-size: 1em;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 Música romántica (empieza al hacer scroll) -->
+<audio id="music" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_7f38e3e8e1.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 💕 Corazones -->
+<span class="heart" style="left:10%;">♥</span>
+<span class="heart" style="left:30%; animation-delay:2s;">♥</span>
+<span class="heart" style="left:50%; animation-delay:4s;">♥</span>
+<span class="heart" style="left:70%; animation-delay:1s;">♥</span>
+<span class="heart" style="left:90%; animation-delay:3s;">♥</span>
+
+<div class="container">
+
+<h1>Para ti 💖</h1>
+<hr>
+
+<p>
+Dicen que las historias bonitas no comienzan con grandes planes,
+sino con pequeños impulsos del corazón.
+Un día cualquiera, sin saber muy bien por qué,
+sentí unas ganas inmensas de escribirte…
+y lo hice.
+</p>
+
+<p>
+Era <strong>29 de diciembre</strong>,
+y desde ese instante todo empezó a tomar un color diferente.
+Las palabras fluyeron,
+las respuestas llegaron,
+y sin darnos cuenta
+comenzamos a descubrirnos poco a poco.
+</p>
+
+<p>
+Con cada encuentro,
+con cada conversación,
+fui entendiendo que había algo especial en ti.
+Algo que se sentía en calma,
+en sonrisas sinceras,
+en miradas que hablan sin decir nada.
+</p>
+
+<img src="nosotros.jpeg" alt="Nuestra foto">
+
+<p>
+Me gusta tu forma de ser,
+tu mirada,
+tu sonrisa…
+y esa manera tan dulce y tierna
+en la que haces que todo se sienta bien
+cuando estoy a tu lado.
+</p>
+
+<p>
+Sin darme cuenta,
+te fuiste convirtiendo en un lugar seguro,
+en alguien a quien quiero cuidar,
+admirar
+y elegir cada día.
+</p>
+
+<p>
+Tal vez no siempre encuentro las palabras perfectas,
+pero hoy quiero decirte algo con el corazón en la mano,
+porque lo que siento por ti es real.
+</p>
+
+<div class="fade-in">
+
+<p style="font-size:1.2em;">
+<strong>
+¿Te gustaría seguir escribiendo esta historia conmigo<br>
+y caminar a mi lado como mi enamorada?
+</strong>
+</p>
+
+<button class="si" onclick="location.href='gracias.html'">
+💖 Sí 💖
+</button>
+
+<button class="no" onclick="alert('Gracias por llegar hasta aquí 💗')">
+No
+</button>
+
+</div>
+
+<p class="signature">
+Con cariño,<br>
+<strong>— Tu nombre 💌</strong>
+</p>
+
+</div>
+
+<script>
+let started = false;
+window.addEventListener("scroll", () => {
+  if (!started) {
+    document.getElementById("music").play();
+    started = true;
+  }
+});
+</script>
+
+</body>
+</html>
